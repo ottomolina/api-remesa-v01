@@ -7,7 +7,7 @@ class Server {
     constructor() {
         this.props = propReader('./src/settings.properties')
         this.app = express()
-        this.port = this.props.get('com.backend.ws.port')
+        this.port = process.env.PORT || this.props.get('com.backend.ws.port')
 
         this.middlewares()
 
